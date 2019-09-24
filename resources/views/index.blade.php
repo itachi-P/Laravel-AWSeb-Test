@@ -8,10 +8,9 @@
 <body>
     Laravel-AWS Elastic Beanstalk デプロイテスト用ページ
 
-    (仮)
-    user_id: {{ $request->user_id }}
+    <p>(仮) user_id: {{ $request->user_id }}</p>
 
-    <li><a href="{{ action('PostsController@home', $request) }}">投稿画像一覧（ホーム）</a></li>
+    <li><a href="{{ action('PostsController@home') }}">投稿画像一覧（ホーム）</a></li>
 
 </body>
 </html>
