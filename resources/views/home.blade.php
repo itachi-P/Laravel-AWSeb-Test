@@ -8,17 +8,18 @@
 <body>
 
 {{-- imagesテーブルから取得した保存済み画像リンク一覧 --}}
-@if (isset($images))    
+@if (isset($images))
+{{-- {{ var_dump($images) }}  --}}
 <ul>
     @foreach ($images as $image)
     <li>
-        <a href="images/SpiceCurry/{{ $image->filename }}" target="_brank">
-            <img src="images/SpiceCurry/{{ $image->filename }}" width="120px" height="100px" />
+        <a href="images/{{ $image->filename }}" target="_brank">
+            <img src="images/{{ $image->filename }}" width="120px" height="100px" />
         </a>   
     </li>
 
     {{-- 上記リストを下記の「詳細ページ」に書き換える予定 --}}
-    <li><a href="{{ action('PostsController@show', $post->id) }}">{{ $post->title }}</a></li>
+    {{-- <li><a href="{{ action('PostsController@show', $post->id) }}">{{ $post->title }}</a></li> --}}
 
     @endforeach
 </ul>
