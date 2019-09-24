@@ -6,7 +6,7 @@ use App\Model\Image;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $request = new Request;
         $request->merge([
@@ -14,7 +14,7 @@ class HomeController extends Controller
             'user_id' => '001',
         ]);
 
-        return view('index', $request);
+        return view('index')->with('request', $request);
     }
 
 }
