@@ -16,6 +16,7 @@ class PostsController extends Controller
         //$request->merge(array('user_id' => $user_id));
 
         $images = Image::all();
+        //$images = array('filename' => 'Programming_Cat.jpg',);
         return view('home', ['images' => $images]);
     }
 
@@ -34,7 +35,7 @@ class PostsController extends Controller
             //storeメソッドを使うとlocalhost:8000に固定されてしまうので他のやり方に回避(画像ファイル名加工なし)
             //$path = $request->file->store('public');
             $filename = $request->file->getClientOriginalName(); //一意なID発行の方が望ましい
-            $move = $request->file->move('./images/', $filename);
+            $request->file->move('./images/', $filename);
 
             $images = new Image;
             $images->fill(['user_id' => $user_id, 'filename' => $filename])->save();
