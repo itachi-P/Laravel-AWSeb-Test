@@ -37,6 +37,7 @@ class PostsController extends Controller
             $filename = $request->file->getClientOriginalName(); //一意なID発行の方が望ましい
             $request->file->move('./images/', $filename);
 
+// ここまでは正常に動作
             $images = new Image;
             $images->fill(['user_id' => $user_id, 'filename' => $filename])->save();
             $images = Image::all();

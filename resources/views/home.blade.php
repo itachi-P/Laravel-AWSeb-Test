@@ -9,7 +9,7 @@
 
 {{-- imagesテーブルから取得した保存済み画像リンク一覧 --}}
 @if (isset($images))
-{{-- {{ var_dump($images) }}  --}}
+{{ var_dump($images) }} 
 <ul>
     @foreach ($images as $image)
     <li>
