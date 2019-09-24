@@ -55,6 +55,12 @@ $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
+# AWS-RDS接続テスト
+if(DB::connection()->getDatabaseName())
+{
+   echo "Connected to database ".DB::connection()->getDatabaseName();
+}
+
 $response->send();
 
 $kernel->terminate($request, $response);
