@@ -48,7 +48,7 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('RDS_HOSTNAME', '127.0.0.1'),
             'port' => env('RDS_PORT', '3306'),
-            'database' => env('RDS_DB_NAME', 'testdb_01a'),
+            'database' => env('RDS_DB_NAME', 'ebdb'),
             'username' => env('RDS_USERNAME', 'root'),
             'password' => env('RDS_PASSWORD', 'password'),
             'unix_socket' => env('DB_SOCKET', ''),
