@@ -16,4 +16,3 @@ Route::post('/upload', 'PostsController@upload');
 
 # 仮実装
 //Route::get('/posts/{id}', 'PostsController@show');
-
